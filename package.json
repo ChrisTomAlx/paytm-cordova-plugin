@@ -1,6 +1,6 @@
 {
-    "version": "0.0.10",
-    "name": "cordova-plugin-paytm",
+    "version": "0.0.11",
+    "name": "cordova-plugin-paytmx",
     "cordova_name": "PayTM",
     "description": "This Plugin allows you to integrate PayTM application into a cordova app.",
     "license": "MIT",
@@ -14,7 +14,7 @@
         "url": "https://github.com/ArunYogi/paytm-cordova-plugin/issues"
     },
     "cordova": {
-        "id": "cordova-plugin-paytm",
+        "id": "cordova-plugin-paytmx",
         "platforms": [
             "android",
             "ios"

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-paytm"
-        version="0.0.10">
+        id="cordova-plugin-paytmx"
+        version="0.0.11">
 
   <name>PayTM</name>
 
@@ -73,5 +73,6 @@
     <source-file src="src/android/com/paytm/cordova/PayTM.java" target-dir="src/com/paytm/cordova"/>
     <framework src="src/android/build.gradle" custom="true" type="gradleReference"/>
     <framework src="com.android.support:support-v4:26.+"/>
+    <framework src="com.android.support:appcompat-v7:+"/>
   </platform>
 </plugin>

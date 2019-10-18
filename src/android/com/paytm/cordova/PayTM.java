@@ -82,7 +82,7 @@ public class PayTM extends CordovaPlugin {
             if ("production".equalsIgnoreCase(env)) {
                 this.paytm_service = PaytmPGService.getProductionService();
             } else {
-                this.paytm_service = PaytmPGService.getStagingService();
+                this.paytm_service = PaytmPGService.getStagingService("");
             }
             HashMap<String, String> paramMap = new HashMap<String, String>();
             Iterator optkeys = jsonobj.keys();

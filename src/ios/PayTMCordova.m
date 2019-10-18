@@ -17,22 +17,14 @@
     
     NSBundle* mainBundle;
     mainBundle = [NSBundle mainBundle];
-    
-    NSString* paytm_merchant_id = [mainBundle objectForInfoDictionaryKey:@"PayTMMerchantID"];
-    NSString* paytm_ind_type_id = [mainBundle objectForInfoDictionaryKey:@"PayTMIndustryTypeID"];
-    NSString* paytm_website = [mainBundle objectForInfoDictionaryKey:@"PayTMWebsite"];
-    
+   
     PGMerchantConfiguration* merchant = [PGMerchantConfiguration defaultConfiguration];
     
     //Step 2: Create the order with whatever params you want to add. But make sure that you include the merchant mandatory params
     NSMutableDictionary *orderDict = [options mutableCopy];
     NSString *environment=orderDict[@"ENVIRONMENT"];
     [orderDict removeObjectForKey:@"ENVIRONMENT"];
-    //Merchant configuration in the order object
-    orderDict[@"MID"] = paytm_merchant_id;
-    orderDict[@"INDUSTRY_TYPE_ID"] = paytm_ind_type_id;
-    orderDict[@"CHANNEL_ID"] = @"WAP";
-    orderDict[@"WEBSITE"] = paytm_website;
+   
 
     PGOrder *order = [PGOrder orderWithParams:orderDict];
     

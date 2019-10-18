@@ -26,20 +26,9 @@ import com.paytm.pgsdk.*;
 public class PayTM extends CordovaPlugin {
 
     private PaytmPGService paytm_service;
-    private String PAYTM_MERCHANT_ID;
-    private String PAYTM_INDUSTRY_TYPE_ID;
-    private String PAYTM_WEBSITE;
 
     protected void pluginInitialize() {
-        int appResId = cordova.getActivity().getResources().getIdentifier("paytm_merchant_id", "string",
-                cordova.getActivity().getPackageName());
-        PAYTM_MERCHANT_ID = cordova.getActivity().getString(appResId);
-        appResId = cordova.getActivity().getResources().getIdentifier("paytm_industry_type_id", "string",
-                cordova.getActivity().getPackageName());
-        PAYTM_INDUSTRY_TYPE_ID = cordova.getActivity().getString(appResId);
-        appResId = cordova.getActivity().getResources().getIdentifier("paytm_website", "string",
-                cordova.getActivity().getPackageName());
-        PAYTM_WEBSITE = cordova.getActivity().getString(appResId);
+
     }
 
     public static Object wrap(Object o) {
@@ -102,9 +91,7 @@ public class PayTM extends CordovaPlugin {
                 paramMap.put(key, jsonobj.getString(key));
             }
             paramMap.remove("ENVIRONMENT");
-            paramMap.put("MID", PAYTM_MERCHANT_ID);
-            paramMap.put("INDUSTRY_TYPE_ID", PAYTM_INDUSTRY_TYPE_ID);
-            paramMap.put("WEBSITE", PAYTM_WEBSITE);
+
             Log.i("PayTM", "Input params :" + paramMap);
             PaytmOrder order = new PaytmOrder(paramMap);
 
